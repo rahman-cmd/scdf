@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://scdf-bd.org/sitemap.xml

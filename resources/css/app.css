@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+    --color-navy: #062b50;
+    --color-navy-mid: #0a3768;
+    --color-ink: #1d3e5c;
+    --color-muted: #5c7082;
+    --color-brand: #159447;
+    --color-brand-dark: #0d7a38;
+    --color-sea: #1d99bd;
+    --color-partner: #147fd1;
+    --color-sand: #fff6e8;
+    --color-cream: #f7f3e6;
+    --color-mist: #f4fafc;
+}
+
+@layer base {
+    html {
+        scroll-padding-top: 5.5rem;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-serif);
+        letter-spacing: -0.025em;
+    }
+}
+
+@layer components {
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        border-radius: 999px;
+        padding: 0.9rem 1.45rem;
+        font-size: 0.92rem;
+        font-weight: 800;
+        line-height: 1;
+        transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .btn:focus-visible {
+        outline: 2px solid var(--color-brand);
+        outline-offset: 3px;
+    }
+
+    .btn-brand {
+        background: linear-gradient(180deg, #22a84f, #12863c);
+        color: white;
+        box-shadow: 0 10px 24px rgba(21, 148, 71, 0.28);
+    }
+
+    .btn-brand:hover {
+        background: linear-gradient(180deg, #1b9846, #0d7a38);
+    }
+
+    .btn-light {
+        background: white;
+        color: #1760a8;
+        box-shadow: 0 10px 28px rgba(15, 55, 80, 0.14);
+    }
+
+    .btn-partner {
+        background: var(--color-partner);
+        color: white;
+        box-shadow: 0 10px 24px rgba(20, 127, 209, 0.28);
+    }
+
+    .eyebrow {
+        margin-bottom: 0.75rem;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        color: var(--color-sea);
+    }
+
+    .amount-btn.is-selected {
+        border-color: var(--color-brand);
+        background: var(--color-brand);
+        color: white;
+        box-shadow: 0 8px 18px rgba(21, 148, 71, 0.25);
+    }
+}
+
+@media (max-width: 1023px) {
+    #site-nav.is-open {
+        display: flex;
+    }
+}
