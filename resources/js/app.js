@@ -52,6 +52,35 @@ amountButtons.forEach((button) => {
 
 amountInput?.addEventListener('input', () => paintAmount(amountInput.value));
 
+const paymentMethodInput = document.querySelector('#payment_method');
+const paymentMethodButtons = [...document.querySelectorAll('[data-payment-method]')];
+const paymentAccounts = [...document.querySelectorAll('[data-payment-account]')];
+
+const paintPaymentMethod = (value) => {
+    paymentMethodButtons.forEach((button) => {
+        const selected = button.dataset.paymentMethod === String(value);
+        button.classList.toggle('is-selected', selected);
+        button.classList.toggle('border-brand', selected);
+        button.classList.toggle('bg-[#f3fbf6]', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+    });
+
+    paymentAccounts.forEach((panel) => {
+        panel.classList.toggle('hidden', panel.dataset.paymentAccount !== String(value));
+    });
+};
+
+paymentMethodButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (!paymentMethodInput) {
+            return;
+        }
+
+        paymentMethodInput.value = button.dataset.paymentMethod;
+        paintPaymentMethod(button.dataset.paymentMethod);
+    });
+});
+
 const navLinks = [...document.querySelectorAll('[data-nav-link]')];
 const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute('href')))

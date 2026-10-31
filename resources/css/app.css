@@ -92,6 +92,12 @@
         color: white;
         box-shadow: 0 8px 18px rgba(21, 148, 71, 0.25);
     }
+
+    .payment-method-btn.is-selected {
+        border-color: var(--color-brand);
+        background: #f3fbf6;
+        box-shadow: 0 6px 14px rgba(21, 148, 71, 0.12);
+    }
 }
 
 @media (max-width: 1023px) {

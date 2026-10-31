@@ -1,6 +1,9 @@
+@php
+    use App\Support\Media;
+@endphp
 <section id="home" class="relative isolate overflow-hidden bg-[#f9f3df]">
     <img
-        src="{{ asset('images/hero-coastal.jpg') }}"
+        src="{{ Media::url($settings->hero_image) }}"
         alt=""
         class="absolute inset-0 h-full w-full object-cover object-center lg:inset-y-0 lg:left-[40%] lg:w-[60%]"
         fetchpriority="high"
@@ -9,14 +12,13 @@
 
     <div class="relative mx-auto flex min-h-[560px] w-full max-w-7xl flex-col justify-center px-5 pb-8 pt-16 sm:px-8 lg:min-h-[640px] lg:pb-24 lg:pt-8">
         <div class="max-w-[46rem]">
-            <p class="eyebrow">Sunderban & Coastal Development Foundation</p>
+            <p class="eyebrow">{{ $settings->hero_eyebrow }}</p>
             <h1 class="text-[2.55rem] leading-[1.05] text-navy sm:text-[3.15rem] lg:text-[3.55rem] lg:leading-[1.02]">
-                <span class="block sm:whitespace-nowrap">Building Resilient</span>
-                <span class="block sm:whitespace-nowrap text-[#0d6f48]">Coastal Communities</span>
+                <span class="block sm:whitespace-nowrap">{{ $settings->hero_title_line_1 }}</span>
+                <span class="block sm:whitespace-nowrap text-[#0d6f48]">{{ $settings->hero_title_line_2 }}</span>
             </h1>
             <p class="mt-5 max-w-xl text-[15px] leading-relaxed text-[#3d4d59] sm:text-base">
-                A non-political, non-profit, non-sectarian humanitarian and development foundation working across climate resilience,
-                infrastructure, healthcare, education, livelihoods and environmental protection in Bangladesh.
+                {{ $settings->hero_body }}
             </p>
             <div class="mt-7 flex flex-wrap gap-3">
                 <a class="btn btn-brand" href="#donate"><i class="fa-solid fa-heart"></i> Donate Now</a>

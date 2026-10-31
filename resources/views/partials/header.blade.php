@@ -1,7 +1,7 @@
 <header class="sticky top-0 z-50 border-b border-white/70 bg-white/90 shadow-[0_1px_12px_rgba(6,43,80,0.06)] backdrop-blur-md">
     <div class="mx-auto flex h-20 w-full max-w-7xl items-center gap-4 px-5 sm:px-8">
         <a href="#home" class="flex min-w-0 items-center gap-2.5">
-            <img src="{{ asset('images/scdf.png') }}" alt="SCDF" class="h-11 w-auto shrink-0 sm:h-14">
+            <img src="{{ $settings->logoUrl() }}" alt="SCDF" class="h-11 w-auto shrink-0 sm:h-14">
             <span class="text-[11px] font-extrabold leading-tight text-navy sm:text-[13px]">Sunderban &amp; Coastal<br>Development Foundation</span>
         </a>
 

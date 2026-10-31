@@ -6,6 +6,7 @@
         $pageTitle = 'SCDF | Sunderban & Coastal Development Foundation';
         $pageDescription = 'Non-profit foundation in coastal Bangladesh. SCDF works on climate resilience, healthcare, education, livelihoods, mangrove conservation and disaster relief.';
         $ogImage = $siteUrl.'/images/hero-coastal.jpg';
+        $logoPath = filled($settings->logo ?? null) ? ltrim($settings->logo, '/') : 'images/scdf.png';
         $schema = [
             '@context' => 'https://schema.org',
             '@graph' => [
@@ -15,7 +16,7 @@
                     'name' => 'Sunderban & Coastal Development Foundation',
                     'alternateName' => 'SCDF',
                     'url' => $siteUrl.'/',
-                    'logo' => $siteUrl.'/images/scdf.png',
+                    'logo' => $siteUrl.'/'.$logoPath,
                     'image' => $ogImage,
                     'description' => $pageDescription,
                     'email' => 'info@scdf-bd.org',

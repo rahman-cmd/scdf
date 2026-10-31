@@ -15,9 +15,14 @@
 /auth.json
 /node_modules
 /public/build
+/public/css/filament
 /public/fonts-manifest.dev.json
+/public/fonts/filament
 /public/hot
+/public/js/filament
 /public/storage
+/public/uploads/*
+!/public/uploads/.gitkeep
 /storage/*.key
 /storage/pail
 /vendor
